@@ -1,4 +1,4 @@
-name: Build from source and deploy to master
+name: Deploy from source
 
 on:
   push:
@@ -10,13 +10,18 @@ jobs:
     runs-on: ubuntu-16.04
     steps:
       - uses: actions/checkout@v2
+
       - uses: actions/setup-node@v2-beta
         with:
           node-version: '12'
+
       - run: yarn install
+
       - run: npx gridsome build
-      - uses: peaceiris/actions-gh-pages@v2
+
+      - name: Deploy to master
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.JEKYLL_PAT }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: master
