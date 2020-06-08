@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: '12'
       - run: npm install
-      - run: npm run build
+      - run: npx gridsome build
 
       - name: 🚀 deploy
         uses: peaceiris/actions-gh-pages@v3
