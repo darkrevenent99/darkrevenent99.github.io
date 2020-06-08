@@ -15,8 +15,8 @@ jobs:
           node-version: '12'
       - run: yarn install
       - run: npx gridsome build
-#      - uses: peaceiris/actions-gh-pages@v3
-#        with:
-#          personal_token: ${{ secrets.JEKYLL_PAT }}
-#          publish_dir: ./dist
-#          publish_branch: master
+      - uses: peaceiris/actions-gh-pages@v2
+        with:
+          personal_token: ${{ secrets.JEKYLL_PAT }}
+          publish_dir: ./dist
+          publish_branch: master
