@@ -9,19 +9,14 @@ jobs:
   build:
     runs-on: ubuntu-16.04
     steps:
-      - name: 📂 checkout
-        uses: actions/checkout@v2
-
-      - name: 🔨 build site
-        uses: actions/setup-node@v2-beta
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2-beta
         with:
           node-version: '12'
-      - run: npm install
-      - run: npx gridsome build
-
-      - name: 🚀 deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          personal_token: ${{ secrets.JEKYLL_PAT }}
-          publish_dir: ./dist
-          publish_branch: master
+      - run: npx gridsome --help
+#      - run: npx gridsome build
+#      - uses: peaceiris/actions-gh-pages@v3
+#        with:
+#          personal_token: ${{ secrets.JEKYLL_PAT }}
+#          publish_dir: ./dist
+#          publish_branch: master
