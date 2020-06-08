@@ -1,0 +1,29 @@
+name: Build from source and deploy to master
+
+on:
+  push:
+    branches:
+      - source
+    
+jobs:
+  build:
+    runs-on: ubuntu-16.04
+    steps:
+      - name: 📂 checkout
+        uses: actions/checkout@v2
+
+      - name: 💎 setup node
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '12'
+
+      - name: 🔨 install dependencies & build site
+      - run: npm install
+      - run: npm run build
+
+      - name: 🚀 deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.JEKYLL_PAT }}
+          publish_dir: ./dist
+          publish_branch: master

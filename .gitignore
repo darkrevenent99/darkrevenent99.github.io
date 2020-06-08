@@ -1,4 +1,8 @@
-.bundle/
-.jekyll-cache/
-_site/
-vendor/
+*.log
+.cache
+.DS_Store
+src/.temp
+node_modules
+dist
+.env
+.env.*
