@@ -13,8 +13,8 @@ jobs:
       - uses: actions/setup-node@v2-beta
         with:
           node-version: '12'
-      - run: npx gridsome --help
-#      - run: npx gridsome build
+      - run: yarn install
+      - run: gridsome build
 #      - uses: peaceiris/actions-gh-pages@v3
 #        with:
 #          personal_token: ${{ secrets.JEKYLL_PAT }}
