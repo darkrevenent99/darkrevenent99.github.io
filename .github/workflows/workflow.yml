@@ -12,12 +12,10 @@ jobs:
       - name: 📂 checkout
         uses: actions/checkout@v2
 
-      - name: 💎 setup node
-      - uses: actions/setup-node@v2-beta
+      - name: 🔨 build site
+        uses: actions/setup-node@v2-beta
         with:
           node-version: '12'
-
-      - name: 🔨 install dependencies & build site
       - run: npm install
       - run: npm run build
 
