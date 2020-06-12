@@ -1,50 +1,25 @@
 <template>
-  <div class="layout">
-    <header class="header">
-      <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
-      </strong>
-      <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
-      </nav>
-    </header>
-    <slot/>
+  <div class="text-green-600 font-light">
+    <nav class="flex items-center justify-between border-b border-green-600 h-16 px-4 md:px-6">
+      <div class="text-xl">
+        <i class="fas fa-bacterium"></i>
+        <a href="/">posalusa24</a>
+      </div>
+      <div class="flex flex-grow items-center justify-end h-full">
+        <div class="w-10 md:w-12 text-center md:rounded-md md:px-2 md:py-1 hover:bg-green-100 hover:font-normal">
+          <g-link to="/">me</g-link>
+        </div>
+        <div class="w-16 md:w-20 text-center md:rounded-md md:px-2 md:py-1 hover:bg-green-100 hover:font-normal">
+          <g-link to="/projects/">projects</g-link>
+        </div>
+        <div class="w-10 md:w-12 text-center md:rounded-md md:px-2 md:py-1 hover:bg-green-100 hover:font-normal">
+          <g-link to="/blog/">blog</g-link>
+        </div>
+      </div>
+    </nav>
+    <slot />
+    <footer class="border-t border-green-600 text-sm text-center py-1 mt-10">
+      made with gridsome &amp; tailwindcss
+    </footer>
   </div>
 </template>
-
-<static-query>
-query {
-  metadata {
-    siteName
-  }
-}
-</static-query>
-
-<style>
-body {
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  margin:0;
-  padding:0;
-  line-height: 1.5;
-}
-
-.layout {
-  max-width: 760px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
-}
-
-.nav__link {
-  margin-left: 20px;
-}
-</style>
