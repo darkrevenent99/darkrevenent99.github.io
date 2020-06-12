@@ -1,14 +1,17 @@
-# Default starter for Gridsome
+# So this is my website
 
-This is the project you get when you run `gridsome create new-project`.
+Most of the time, you should see something akin to an about page (yeah, the one with my face as the background), a low-key philosophical blog, and a list of side projects that I haven't already given up on.
 
-### 1. Install Gridsome CLI tool if you don't have
 
-`npm install --global @gridsome/cli`
+## Tools
 
-### 2. Create a Gridsome project
+Current website is built with JAMstack using:
+- SSG: [Gridsome](https://gridsome.org/)
+- CSS: [Tailwind](https://tailwindcss.com/)
+- Framework: [Vue](https://vuejs.org/)
 
-1. `gridsome create my-gridsome-site` to install default starter
-2. `cd my-gridsome-site` to open the folder
-3. `gridsome develop` to start a local dev server at `http://localhost:8080`
-4. Happy coding 🎉🙌
+Builds from `source` and deploys to `master` using GitHub Actions:
+- [setup-node](https://github.com/marketplace/actions/setup-node-js-environment)
+- [actions-gh-pages](https://github.com/marketplace/actions/github-pages-action)
+- [checkout](https://github.com/marketplace/actions/checkout)
+

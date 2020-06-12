@@ -1,4 +1,4 @@
-name: Deploy from source
+name: deploy from source
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
 
       - run: npx gridsome build
 
-      - name: Deploy to master
+      - name: deploy to master
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
